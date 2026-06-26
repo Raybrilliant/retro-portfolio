@@ -41,5 +41,3 @@ It combines modern frontend development with nostalgic UI design to create a mem
 - Tailwind CSS
 - Bun
 - SvelteKit Static Adapter
-
-```
