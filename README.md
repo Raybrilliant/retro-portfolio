@@ -43,13 +43,3 @@ It combines modern frontend development with nostalgic UI design to create a mem
 - SvelteKit Static Adapter
 
 ```
-
-## Deployment
-
-This project is built as a static website and can be deployed to any static hosting provider.
-
-Production:
-
-```txt
-https://raybrilliant.my.id
-```
