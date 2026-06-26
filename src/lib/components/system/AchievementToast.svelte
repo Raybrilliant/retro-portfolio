@@ -147,7 +147,7 @@
 					</svg>
 					<div class="ach-text">
 						<div class="ach-message">What are you looking for, human?</div>
-						<div class="ach-sub">You have been wandering around Reybrilliant OS for 2 minutes.</div>
+						<div class="ach-sub">You have been wandering around Raybrilliant OS for 2 minutes.</div>
 					</div>
 				</div>
 			</div>

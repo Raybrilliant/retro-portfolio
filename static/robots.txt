@@ -1,3 +1,8 @@
-# allow crawling everything by default
+# Allow all crawlers full access
 User-agent: *
+Allow: /
+
+# Block nothing on this single-page portfolio
 Disallow:
+
+Sitemap: https://raybrilliant.my.id/sitemap.xml
