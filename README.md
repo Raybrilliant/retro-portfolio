@@ -1,42 +1,55 @@
-# sv
+# Reybrilliant OS
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+**Reybrilliant OS** is an interactive portfolio website built with **SvelteKit**, inspired by retro desktop operating systems and classic Windows 98 aesthetics.
 
-## Creating a project
+Instead of presenting a normal scrolling portfolio, this project turns the portfolio experience into a nostalgic desktop OS interface with windows, desktop icons, a taskbar, Start Menu, draggable apps, and retro UI interactions.
 
-If you're seeing this, you've probably already done this step. Congrats!
+Live site:
 
-```sh
-# create a new project
-npx sv create my-app
+👉 **https://raybrilliant.my.id**
+
+## Overview
+
+This website showcases Rey's profile, work, projects, certificates, resume, and contact information through a playful but functional retro OS interface.
+
+It combines modern frontend development with nostalgic UI design to create a memorable portfolio experience.
+
+## Features
+
+- Windows 98 inspired desktop interface
+- Fullscreen wallpaper background
+- Boot/loading screen
+- Desktop icons
+- Start Menu
+- Taskbar
+- Draggable windows
+- Minimize and close window behavior
+- My Work section
+- Projects section
+- Certificates Gallery
+- Resume Notepad window
+- Contact window
+- Winamp-style player
+- Snake Game
+- Minesweeper
+- Achievement notification easter egg
+
+## Tech Stack
+
+- SvelteKit
+- TypeScript
+- Tailwind CSS
+- Bun
+- SvelteKit Static Adapter
+
 ```
 
-To recreate this project with the same configuration:
+## Deployment
 
-```sh
-# recreate this project
-bun x sv@0.16.1 create --template minimal --types ts --add prettier tailwindcss="plugins:none" sveltekit-adapter="adapter:static" --install bun .
+This project is built as a static website and can be deployed to any static hosting provider.
+
+Production:
+
+```txt
+https://raybrilliant.my.id
 ```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
