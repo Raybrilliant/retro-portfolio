@@ -13,6 +13,14 @@ export type Certificate = {
 
 export const certificates: Certificate[] = [
  	{
+		id: '3',
+		title: 'AI Fluency By Microsoft',
+		issuer: 'LAN RI',
+		year: '2025',
+		image: '/certificates/ai-fluency-by-microsoft.webp',
+		description: 'learned from basic AI for building and Enhance Productivity with Microsoft Copilot'
+	},
+ 	{
 		id: '1',
 		title: 'Front End Development Libraries',
 		issuer: 'freeCodeCamp',

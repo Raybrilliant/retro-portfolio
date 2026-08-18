@@ -55,6 +55,20 @@ export const desktopIcons: DesktopIcon[] = [
 		win: { id: 'contact', title: 'Contact', icon: 'mail', x: 0, y: 0, w: 520, h: 420 }
 	},
 	{
+		id: 'internet',
+		label: 'Internet Explorer',
+		icon: 'ie',
+		win: {
+			id: 'internet',
+			title: 'Reybrilliant Online - Internet Explorer',
+			icon: 'ie',
+			x: 0,
+			y: 0,
+			w: 640,
+			h: 520
+		}
+	},
+	{
 		id: 'certificates',
 		label: 'Certificates',
 		icon: 'certificate',

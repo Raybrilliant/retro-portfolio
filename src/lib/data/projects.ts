@@ -13,6 +13,16 @@ export type ProjectItem = {
 };
 
 export const projectItems: ProjectItem[] = [
+  {
+		id: 'spendy',
+		title: 'Spendy',
+		category: 'Finance',
+		year: '2023',
+		image: '/projects/spendy.webp',
+		description: 'Spendy is a mobile app that helps you track your expenses and save money.',
+		technologies: ['Svelte', 'GASP', 'SQLite'],
+		link: 'https://spendy.raybrilliant.my.id'
+	},
 	{
 		id: 'moslem',
 		title: 'Moslem',

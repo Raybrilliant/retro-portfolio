@@ -183,4 +183,22 @@
 		<rect x="12" y="6" width="8" height="4" fill="#9a6a2a" stroke="#404040" />
 		<rect x="4" y="14" width="24" height="3" fill="#c08040" />
 	</svg>
+{:else if name === 'ie'}
+		<svg width={size} height={size} viewBox="0 0 32 32">
+			<!-- yellow orbital ring -->
+			<ellipse
+				cx="16"
+				cy="16"
+				rx="13"
+				ry="5"
+				transform="rotate(-30 16 16)"
+				fill="none"
+				stroke="#f5c518"
+				stroke-width="2.6"
+			/>
+			<!-- blue lowercase e -->
+			<circle cx="16" cy="16" r="8.5" fill="#1a6abf" />
+			<circle cx="16" cy="16" r="4.6" fill="#fff" />
+			<rect x="10.5" y="14.6" width="9.5" height="2.8" fill="#1a6abf" />
+		</svg>
 {/if}

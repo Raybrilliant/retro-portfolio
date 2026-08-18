@@ -1,6 +1,7 @@
 // Central data exports — edit the individual files for content changes.
 export { profile, contact, heroButtons } from './profile';
 export { seo, personSchema, websiteSchema } from './seo';
+export { socialLinks, ieHomePage, type SocialLink, type SocialGlyph } from './social';
 export { workItems, type WorkItem } from './work';
 export { projectItems, type ProjectItem } from './projects';
 export { resumeText } from './resume';

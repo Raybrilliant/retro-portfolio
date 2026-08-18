@@ -17,6 +17,7 @@
 		{ id: 'projects', label: 'Projects', icon: 'folder', key: 'J' },
 		{ id: 'about', label: 'About Me', icon: 'about', key: 'A' },
 		{ id: 'contact', label: 'Contact', icon: 'mail', key: 'C' },
+		{ id: 'internet', label: 'Internet Explorer', icon: 'ie', key: 'I' },
 		{ id: 'certificates', label: 'Certificates', icon: 'certificate', key: 'T' },
 		{ id: 'winamp', label: 'Winamp Player', icon: 'winamp', key: 'P' },
 		{ id: 'snake', label: 'Snake Game', icon: 'snake', key: 'S' },

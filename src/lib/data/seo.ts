@@ -2,6 +2,8 @@
 // Edit this file to update how search engines and social previews represent the site.
 // The real name below is what makes the site discoverable when people search for it.
 
+import { socialLinks } from './social';
+
 export const seo = {
 	fullName: 'Raihan Fikri Brilliansyach',
 	alias: 'Rey',
@@ -67,7 +69,7 @@ export const personSchema = {
 	url: seo.siteUrl,
 	email: `mailto:${seo.email}`,
 	image: seo.ogImage,
-	sameAs: [seo.linkedin],
+	sameAs: socialLinks.map((s) => s.url),
 	worksFor: {
 		'@type': 'Organization',
 		name: seo.worksFor

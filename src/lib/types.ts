@@ -19,6 +19,7 @@ export type IconName =
 	| 'winamp'
 	| 'snake'
 	| 'minesweeper'
-	| 'certificate';
+	| 'certificate'
+	| 'ie';
 
 export type WindowCtx = { active: boolean; minimized: boolean };

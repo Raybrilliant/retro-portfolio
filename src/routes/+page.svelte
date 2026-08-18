@@ -14,6 +14,7 @@
 	import Toast from '$lib/components/Toast.svelte';
 	import ExplorerApp from '$lib/components/ExplorerApp.svelte';
 	import AchievementToast from '$lib/components/system/AchievementToast.svelte';
+	import InternetExplorerApp from '$lib/components/InternetExplorerApp.svelte';
 	import type { IconName } from '$lib/types';
 	import {
 		desktopIcons,
@@ -37,6 +38,7 @@
 	let tooltip = $state<{ text: string; x: number; y: number } | null>(null);
 	let shuttingDown = $state(false);
 	let toast = $state<string | null>(null);
+	let ieStatus = $state('Done');
 
 	function showToast(msg: string) {
 		toast = msg;
@@ -312,7 +314,13 @@
 				minimized={w.minimized}
 				z={zIndexFor(w.id)}
 				keepMounted={w.id === 'snake' || w.id === 'minesweeper'}
-				statusText={w.id === 'explorer' ? explorerStatusFor(explorerSection) : 'Ready'}
+				statusText={
+					w.id === 'explorer'
+						? explorerStatusFor(explorerSection)
+						: w.id === 'internet'
+							? ieStatus
+							: 'Ready'
+			}
 				statusRight={w.id === 'explorer' ? 'Ready' : ''}
 				onActivate={activate}
 				onClose={closeWin}
@@ -340,6 +348,8 @@
 					</div>
 				{:else if w.id === 'explorer'}
 					<ExplorerApp section={explorerSection} onSectionChange={setExplorerSection} />
+				{:else if w.id === 'internet'}
+					<InternetExplorerApp bind:status={ieStatus} />
 				{:else if w.id === 'about'}
 					<div class="content about">
 						<div class="about-head">
