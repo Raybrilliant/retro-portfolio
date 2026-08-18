@@ -17,7 +17,7 @@ export const projectItems: ProjectItem[] = [
 		id: 'spendy',
 		title: 'Spendy',
 		category: 'Finance',
-		year: '2023',
+		year: '2026',
 		image: '/projects/spendy.webp',
 		description: 'Spendy is a mobile app that helps you track your expenses and save money.',
 		technologies: ['Svelte', 'GASP', 'SQLite'],
@@ -42,16 +42,6 @@ export const projectItems: ProjectItem[] = [
 		description: 'Watch Movies from Netflix, Disney+, Apple TV+, and Other Streaming Services for Free with Minimal Ads and No Registration.',
 		technologies: ['Typescript', 'NextJs'],
 		link: 'https://www.netplix.xyz/'
-	},
-	{
-		id: 'qmis',
-		title: 'QMIS',
-		category: 'Finance',
-		year: '2023',
-		image: '/projects/qmis.webp',
-		description: 'The dynamic QRIS app that requires no registration. Simplify your transactions with ease!',
-		technologies: ['Typescript', 'NextJs'],
-		link: 'https://qmis.pages.dev/'
 	},
 	// {
 	// 	id: 'portfolio-os',

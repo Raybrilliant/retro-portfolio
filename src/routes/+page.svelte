@@ -39,6 +39,8 @@
 	let shuttingDown = $state(false);
 	let toast = $state<string | null>(null);
 	let ieStatus = $state('Done');
+	let contactSending = $state(false);
+	let contactMsg = $state('');
 
 	function showToast(msg: string) {
 		toast = msg;
@@ -52,6 +54,42 @@
 		setTimeout(() => {
 			if (toast === msg) toast = null;
 		}, 3200);
+	}
+
+	// Contact form → Telegram bot. no-cors POST so the static site needs no backend.
+	async function sendContact(e: SubmitEvent) {
+		e.preventDefault();
+		const form = e.currentTarget as HTMLFormElement;
+		const fd = new FormData(form);
+		const name = String(fd.get('name') ?? '').trim();
+		const email = String(fd.get('email') ?? '').trim();
+		const message = String(fd.get('message') ?? '').trim();
+		if (!name || !email || !message) {
+			contactMsg = 'Please fill in all fields.';
+			return;
+		}
+		if (!contact.telegram.chatId) {
+			contactMsg = 'Telegram chat_id not configured yet.';
+			return;
+		}
+		contactSending = true;
+		contactMsg = '';
+		const text = `📨 New contact from Reybrilliant OS\n\nName: ${name}\nEmail: ${email}\n\n${message}`;
+		// ponytail: no-cors = can't read the response, so we assume success on resolve.
+		const body = new URLSearchParams({ chat_id: contact.telegram.chatId, text });
+		try {
+			await fetch(`https://api.telegram.org/bot${contact.telegram.token}/sendMessage`, {
+				method: 'POST',
+				mode: 'no-cors',
+				body
+			});
+			contactMsg = '✓ Message sent to Rey via Telegram. Thanks!';
+			form.reset();
+		} catch {
+			contactMsg = 'Could not send right now. Email hello@raybrilliant.my.id instead.';
+		} finally {
+			contactSending = false;
+		}
 	}
 
 	// Open hero window automatically after boot.
@@ -372,19 +410,18 @@
 					<div class="content contact">
 						<h2 class="sec-title">{contact.heading}</h2>
 						<p class="muted">{contact.hint}</p>
-						<form onsubmit={(e) => e.preventDefault()} class="cform">
-							<label>Name<input type="text" placeholder="Your name" /></label>
-							<label>Email<input type="email" placeholder="you@domain.com" /></label>
-							<label>Message<textarea rows="4" placeholder={contact.placeholder}></textarea></label>
+						<form onsubmit={sendContact} class="cform">
+							<label>Name<input name="name" type="text" placeholder="Your name" required /></label>
+							<label>Email<input name="email" type="email" placeholder="you@domain.com" required /></label>
+							<label>Message<textarea name="message" rows="4" placeholder={contact.placeholder} required></textarea></label>
 							<div class="form-actions">
-								<button type="submit" class="wbtn">Send</button>
-								<button type="reset" class="wbtn ghost">Clear</button>
+								<button type="submit" class="wbtn" disabled={contactSending}>
+									{contactSending ? 'Sending…' : 'Send'}
+								</button>
+								<button type="reset" class="wbtn ghost" disabled={contactSending}>Clear</button>
 							</div>
+							{#if contactMsg}<div class="cform-msg">{contactMsg}</div>{/if}
 						</form>
-						<div class="quick">
-							<div>📧 {contact.email}</div>
-							<div>📞 {contact.phone}</div>
-						</div>
 					</div>
 				{:else if w.id === 'resume'}
 					<div class="content notepad">
@@ -644,6 +681,14 @@
 		display: flex;
 		gap: 8px;
 		margin-top: 4px;
+	}
+	.cform-msg {
+		margin-top: 4px;
+		font-size: 12px;
+		color: #000080;
+		background: #ffffe1;
+		border: 1px solid #808080;
+		padding: 4px 6px;
 	}
 	.quick {
 		margin-top: 14px;

@@ -378,12 +378,6 @@
 	.page {
 		padding: 18px 22px 22px;
 	}
-	.page-head h1 {
-		font-size: 26px;
-		margin: 0 0 4px;
-		color: #000080;
-		font-weight: 800;
-	}
 	.page-sub {
 		font-size: 13px;
 		color: #333;

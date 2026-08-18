@@ -28,15 +28,23 @@ export const profile = {
 	] as { label: string; value: string }[]
 };
 
-export const contact = {
-	email: 'hello@raybrilliant.my.id',
-	phone: '',
-	linkedin: 'www.linkedin.com/in/raybrilliant',
-	portfolio: 'raybrilliant.my.id',
-	heading: 'Contact',
-	hint: "Drop a message and I'll get back when I'm not fighting bugs, servers, or government paperwork.",
-	placeholder: 'Hello Rey…'
-};
+	export const contact = {
+		email: 'hello@raybrilliant.my.id',
+		phone: '',
+		linkedin: 'www.linkedin.com/in/raybrilliant',
+		portfolio: 'raybrilliant.my.id',
+		heading: 'Contact',
+		hint: "Drop a message and I'll get back when I'm not fighting bugs, servers, or government paperwork.",
+		placeholder: 'Hello Rey…',
+		// ponytail: token is shipped in the client bundle — anyone can read it. Ceiling: a personal
+		// bot with low traffic. Upgrade: move to a serverless proxy (adapter-vercel +server.ts) + env.
+		telegram: {
+			token: '6670914797:AAG7jLJ3o4w2xyZDka4J8B5oN8ItGEyX9Ts',
+			// Paste your numeric chat_id here. Get it: send /start to @qmisReceivedBot in Telegram,
+			// then message @userinfobot (or open the getUpdates URL) to read your id.
+			chatId: '382360898'
+		}
+	};
 
 // Hero window action buttons
 export const heroButtons = [
